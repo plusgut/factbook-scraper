@@ -18,7 +18,7 @@ module.exports = function(directory) {
   const result = {};
 
   const files = fs.readdirSync(directory).filter((file, index) => {
-    return index === 0;
+    // return index === 0;
     return getLanguageCode(file) !== false;
   }).forEach((file) => {
     result[getLanguageCode(file)] = {};
@@ -30,14 +30,13 @@ module.exports = function(directory) {
 
       result[getLanguageCode(file)][headline] = {};
 
-      panelElement.find('tr').each((index, tr) => {
-        const trElement = $(tr);
-        console.log(trElement.find('a').first().html());
-        const subHeadline = trElement.find('a').first().text();
-        result[getLanguageCode(file)][headline][subHeadline] = 'foo';
+      panelElement.find('tr[class]').each((index, tr) => {
+        const headTrElement = $(tr);
+        const contentTrElement = headTrElement.next().find('.category_data');
+        const subHeadline = headTrElement.find('a').first().text().substr(1);
+        result[getLanguageCode(file)][headline][subHeadline] = contentTrElement.text();
       });
     });
-    // result[getLanguageCode(file)] = 
   });
 
   return result;
