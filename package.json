@@ -1,0 +1,22 @@
+{
+  "name": "factbook-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plusgut/factbook-scraper.git"
+  },
+  "author": "Carlo Jeske",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/plusgut/factbook-scraper/issues"
+  },
+  "homepage": "https://github.com/plusgut/factbook-scraper#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
